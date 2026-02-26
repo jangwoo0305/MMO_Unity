@@ -6,13 +6,19 @@ public class Managers :  MonoBehaviour
 {
     static Managers s_instance; // static이라는 특성상 유일성 보장
 
-    public static Managers Instance // 유일한 매니저를 갖고 온다.
+    static Managers Instance // 유일한 매니저를 갖고 온다.
     {
         get
         {
             Init(); 
             return s_instance;
         }
+    }
+    
+    InputManager _input = new InputManager();
+    public static InputManager Input
+    {
+        get { return Instance._input; }
     }
     
     void Start()
@@ -22,7 +28,7 @@ public class Managers :  MonoBehaviour
 
     void Update()
     {
-        
+        _input.OnUpdate();
     }
 
     static void Init()
