@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 471684592}
   - component: {fileID: 471684591}
   - component: {fileID: 471684590}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,9 +307,9 @@ GameObject:
   - component: {fileID: 639272353}
   - component: {fileID: 639272352}
   - component: {fileID: 639272351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube two
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -693,9 +693,9 @@ GameObject:
   - component: {fileID: 1973985195}
   - component: {fileID: 1973985194}
   - component: {fileID: 1973985198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube one
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
