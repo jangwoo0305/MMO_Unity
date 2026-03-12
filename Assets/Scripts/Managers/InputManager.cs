@@ -25,7 +25,7 @@ public class InputManager
             else
             {
                 if (_pressed)
-                    MouseAction.Invoke(Define.MouseEvent.Click);
+                    MouseAction.Invoke(Define.MouseEvent.Click); // 마우스를 떼면 클릭으로 인정
                 _pressed = false;
             }
         }

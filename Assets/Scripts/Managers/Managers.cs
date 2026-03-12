@@ -6,7 +6,14 @@ public class Managers :  MonoBehaviour
 {
     static Managers s_instance; // static이라는 특성상 유일성 보장
 
-    static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 가져온다.
+    static Managers Instance
+    {
+        get
+        {
+            Init(); 
+            return s_instance;
+        }
+    } // 유일한 매니저를 가져온다.
     
     ResourceManager _resouce = new ResourceManager();
     InputManager _input = new InputManager();

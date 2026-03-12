@@ -25,14 +25,14 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 dir = _destPos - transform.position;
             if(dir.magnitude < 0.0001f)
-            {
+            { 
                 _moveToDest = false;
             }
             else
             {
                 float moveDist = Mathf.Clamp(_speed * Time.deltaTime,0 , dir.magnitude);
                 transform.position += dir.normalized * moveDist;
-                transform.LookAt(_destPos);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
             }
         }
     }
