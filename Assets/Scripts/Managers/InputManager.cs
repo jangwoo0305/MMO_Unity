@@ -14,7 +14,7 @@ public class InputManager
     public void OnUpdate()
     {
         
-        if(EventSystem.current.IsPointerOverGameObject())
+        if(EventSystem.current.IsPointerOverGameObject()) // UI를 클릭하면 케릭터가 이동하지 않게 하는 부분
             return;
             
         if(Input.anyKey && KeyAction != null)
