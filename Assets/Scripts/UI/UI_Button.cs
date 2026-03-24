@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 using Object = UnityEngine.Object;
 
-public class NewBehaviourScript : MonoBehaviour
+public class NewBehaviourScript : UI_Base
 {
-    Dictionary<Type, UnityEngine.Object[]> _objects = new Dictionary<Type, UnityEngine.Object[]>();
-        
+    
     enum Buttons
     {
         PointButton,
@@ -18,26 +19,21 @@ public class NewBehaviourScript : MonoBehaviour
     enum Texts
     {
         PointText,
-        ScoreText
+        ScoreText,
+    }
+
+    enum GameObjects
+    {
+        TestObject,
     }
 
     void Start()
     {
         Bind<Button>(typeof(Buttons));
-        Bind<Text>(typeof(Texts));
-    }
+        Bind<TextMeshProUGUI>(typeof(Texts));
+        Bind<GameObject>(typeof(GameObjects));
 
-    void Bind<T>(Type type)
-    {
-        string[] names = Enum.GetNames(type);
-        UnityEngine.Object[] objects = new UnityEngine.Object[names.Length];
-        _objects.Add(typeof(T), objects);
-
-        for (int i = 0; i < names.Length; i++)
-        {
-            objects[i] = null;
-        }
-            
+        GetText((int)Texts.ScoreText).text = "Bind Test";
     }
     
     int _score = 0;
