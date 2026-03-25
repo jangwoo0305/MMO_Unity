@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
-using Unity.VisualScripting;
 using UnityEngine.EventSystems;
-using Object = UnityEngine.Object;
+
 
 public class NewBehaviourScript : UI_Base
 {
@@ -27,13 +23,23 @@ public class NewBehaviourScript : UI_Base
         TestObject,
     }
 
+    enum Images
+    {
+        ItemIcon,
+    }
+
     void Start()
     {
         Bind<Button>(typeof(Buttons));
         Bind<TextMeshProUGUI>(typeof(Texts));
         Bind<GameObject>(typeof(GameObjects));
+        Bind<Image>(typeof(Images));
 
         GetText((int)Texts.ScoreText).text = "Bind Test";
+        
+        GameObject go = GetImage((int)Images.ItemIcon).gameObject;
+        UI_EventHandler evt = go.GetComponent<UI_EventHandler>();
+        evt.OnDragHandler += ((PointerEventData data) => { evt.gameObject.transform.position = data.position; });
     }
     
     int _score = 0;
