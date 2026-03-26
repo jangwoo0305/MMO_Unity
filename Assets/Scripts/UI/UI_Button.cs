@@ -34,18 +34,18 @@ public class NewBehaviourScript : UI_Base
         Bind<TextMeshProUGUI>(typeof(Texts));
         Bind<GameObject>(typeof(GameObjects));
         Bind<Image>(typeof(Images));
-
-        GetText((int)Texts.ScoreText).text = "Bind Test";
+        
+        GetButton((int)Buttons.PointButton).gameObject.AddUIEvent(OnButtonClick);
         
         GameObject go = GetImage((int)Images.ItemIcon).gameObject;
-        UI_EventHandler evt = go.GetComponent<UI_EventHandler>();
-        evt.OnDragHandler += ((PointerEventData data) => { evt.gameObject.transform.position = data.position; });
+        AddUIEvent(go,(PointerEventData data) => { go.transform.position = data.position;},Define.UIEvent.Drag);
     }
     
     int _score = 0;
     
-    public void OnButtonClick()
+    public void OnButtonClick(PointerEventData data)
     {
         _score++;
+        GetText((int)Texts.ScoreText).text = $"score: {_score}";
     }
 }
