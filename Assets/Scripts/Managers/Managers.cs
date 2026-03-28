@@ -13,10 +13,12 @@ public class Managers :  MonoBehaviour
         }
     } // 유일한 매니저를 가져온다.
     
-    ResourceManager _resouce = new ResourceManager();
     InputManager _input = new InputManager();
+    ResourceManager _resouce = new ResourceManager();
+    UIManager _ui = new UIManager();
     public static InputManager Input { get { return Instance._input; } }
     public static ResourceManager Resource { get { return Instance._resouce; } }
+    public static UIManager UI { get { return Instance._ui; } }
     
     void Start()
     {
