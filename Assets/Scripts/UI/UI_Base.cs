@@ -5,9 +5,11 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 
-public class UI_Base : MonoBehaviour
+public abstract class UI_Base : MonoBehaviour
 {
     Dictionary<Type, UnityEngine.Object[]> _objects = new Dictionary<Type, UnityEngine.Object[]>();
+    
+    public abstract void Init();
     
     protected void Bind<T>(Type type) where T : UnityEngine.Object
     {
@@ -27,7 +29,7 @@ public class UI_Base : MonoBehaviour
         }
     }
 
-    T Get<T>(int idx) where T : UnityEngine.Object
+    protected T Get<T>(int idx) where T : UnityEngine.Object
     {
         UnityEngine.Object[] objects = null;
         if (_objects.TryGetValue(typeof(T), out objects) == false)

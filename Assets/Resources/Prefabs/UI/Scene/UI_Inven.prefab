@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3334184095568929267}
   - component: {fileID: 1860688114790620116}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: GridPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,8 +44,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 607.2701, y: -15.114319}
-  m_SizeDelta: {x: -1309.5458, y: -166.2572}
+  m_AnchoredPosition: {x: 589.48346, y: -15.114319}
+  m_SizeDelta: {x: -1273.9725, y: -166.2572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &86143121126394734
 CanvasRenderer:
@@ -166,7 +166,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
