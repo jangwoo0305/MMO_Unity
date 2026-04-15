@@ -43,7 +43,6 @@ public class Util
             {
                 if(string.IsNullOrEmpty(name) || component.name == name)
                     return component;
-                
             }
         }
 
